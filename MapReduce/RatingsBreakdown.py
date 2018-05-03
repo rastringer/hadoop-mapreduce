@@ -15,7 +15,7 @@ class RatingsBreakdown(MRJob):
 
 # Define mapper to break up lines of data on tab, return key value pair of rating and 1
 def mapper_get_ratings(self, _, line):
-  (userID, movieID, rating, timestamp) = line.split('/t')
+  (userID, movieID, rating, timestamp) = line.split('\t')
   yield rating, 1
 
 # Reduce key values, return rating and rating count
